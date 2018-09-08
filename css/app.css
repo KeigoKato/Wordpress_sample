@@ -1,0 +1,79 @@
+ul {
+    list-style: none;
+}
+
+header .nav-item .fa,
+header .nav-item .fas,
+header .nav-item .far,
+header .nav-item .fal,
+header .nav-item .fab {
+    display: block;
+}
+
+header {
+    /* padding: 0; */
+    width: 100%;
+}
+
+header button {
+    background-color: #cab471 !important;
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+}
+
+header .nav-item {
+    width: 120px;
+}
+
+header .nav-item .fas {
+    /* color: #cab471; */
+    color: #60b74d;
+}
+
+header .header-menu {
+    height: 50px;
+}
+
+.jumbotron {
+    color: blue;
+    background-color: white;
+    background: url('../img/img-home-mainvisual-sample.jpeg') center no-repeat;
+    background-size: cover;
+}
+
+.title-logo {
+    color: white;
+    width: 100%;
+}
+
+
+
+
+
+.main-wrapper {
+    background: url('../img/bg-home-postlist.png');
+}
+
+.menu-title {
+    background-image: url('../img/bg-section-title.png');
+}
+
+.card {
+    background: none;
+}
+
+
+
+.blog-list .row {
+    box-sizing: border-box;
+}
+
+.blog-list img {
+    height: 215px;
+}
+
+.blog-list button {
+    background: none;
+}
