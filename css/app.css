@@ -109,3 +109,63 @@ footer {
     width: auto;
     max-height: 100px;
 }
+
+
+.left-article {
+    border: 7px solid #eee;
+}
+.entry-content p {
+    font-size: 14px;
+}
+.entry-content h2 {
+    color: #be921a
+}
+.entry-content h3 {
+    border-bottom: 1px dashed #666666;
+    color: #666666;
+}
+.entry-content h4 {
+    border-bottom: 1px dotted #666666;
+}
+
+.right-sidebar .card-header {
+    color: white;
+    background-image: url("../img/bg-home-utilities__news.jpg");
+    border-bottom: 7px solid #5a886b;
+}
+
+.recommend-articles h4 {
+    color: #be921a;
+    border: 7px solid #e2b029;
+}
+
+.separator {
+    border-bottom: 2px dashed black;
+}
+
+.recommend-articles img {
+    height: 142px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+.prev-next .prev-btn {
+    color: white;
+    line-height: 18px;
+    width: 80px;
+    height: 34px;
+    background-image: url("../img/sprite.png");
+    background-position: -159px 0px;
+}
+.prev-next .next-btn {
+    color: white;
+    line-height: 18px;
+    width: 81px;
+    height: 34px;
+    background-image: url("../img/sprite.png");
+    background-position: 0px -115px;
+}
