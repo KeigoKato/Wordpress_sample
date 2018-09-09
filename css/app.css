@@ -15,6 +15,14 @@ header {
     width: 100%;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    color: #9ea3a8;
+}
+
 header button {
     background-color: #cab471 !important;
     position: absolute;
@@ -34,6 +42,10 @@ header .nav-item .fas {
 
 header .header-menu {
     height: 50px;
+}
+
+.page-title {
+    color: white;
 }
 
 .jumbotron {
@@ -72,8 +84,28 @@ header .header-menu {
 
 .blog-list img {
     height: 215px;
+    object-fit: cover;
 }
 
 .blog-list button {
     background: none;
+}
+
+.tag-list .badge a{
+    color: white;
+}
+
+/* footer */
+footer {
+    background: url('../img/bg-copyright.png');
+}
+.news-list .column-1 {
+    width: 30%;
+}
+.news-list .column-2 {
+    width: 70%;
+}
+.copyright img {
+    width: auto;
+    max-height: 100px;
 }

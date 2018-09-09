@@ -46,7 +46,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 title-logo">
+                        <?php if (is_front_page()): ?>
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-mainvisual-title.png" class="title-logo" alt="title-log">
+                        <?php else: ?>
+                        <h2 class="page-title">
+                            <?php if (is_single() || is_page()):
+                                the_title();
+                            elseif (is_search()):
+                                "「".esc_html(get_search_query())."」の検索結果";
+                            elseif (is_404()):
+                                "お探しのページは見つかりませんでした";
+                            else:
+                                the_archive_title();
+                            endif;
+                            ?>
+                        </h2>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
