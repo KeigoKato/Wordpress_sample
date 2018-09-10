@@ -1,3 +1,8 @@
+.font-serif {
+    font-family: "Times New Roman", 游明朝, YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", HG明朝E, メイリオ, Meiryo, serif;
+}
+
+
 ul {
     list-style: none;
 }
@@ -116,6 +121,9 @@ footer {
 }
 .entry-content p {
     font-size: 14px;
+}
+.entry-content h1 {
+    color: #be921a
 }
 .entry-content h2 {
     color: #be921a

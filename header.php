@@ -45,22 +45,22 @@
         <div class="mainvisual jumbotron mb-0 py-5 rounded-0">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 title-logo">
+                    <div class="col-sm-12 title-logo">
                         <?php if (is_front_page()): ?>
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-mainvisual-title.png" class="title-logo" alt="title-log">
                         <?php else: ?>
-                        <h2 class="page-title">
+                        <h1 class="page-title font-serif">
                             <?php if (is_single() || is_page()):
                                 the_title();
                             elseif (is_search()):
-                                "「".esc_html(get_search_query())."」の検索結果";
+                                echo "「".esc_html(get_search_query())."」の検索結果";
                             elseif (is_404()):
-                                "お探しのページは見つかりませんでした";
+                                echo "お探しのページは見つかりませんでした";
                             else:
                                 the_archive_title();
                             endif;
                             ?>
-                        </h2>
+                        </h1>
                         <?php endif; ?>
                     </div>
                 </div>
