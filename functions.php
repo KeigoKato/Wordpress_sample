@@ -12,12 +12,13 @@ if (!isset($content_width)) {
 function custom_theme_setup() {
     add_theme_support('title-tag');                                                                            // タイトルタグを自動で出力する
     add_theme_support('automatic-feed-link');                                                                  // ヘッダーにRSSのリンクを出力する
-    add_theme_support('post-thumbnail');                                                                       // アイキャッチ画像のサイズ'post-thumbnail'という名前で適用する
+    add_theme_support('post-thumbnails');                                                                      // アイキャッチ画像のサイズ'post-thumbnail'という名前で適用する
     set_post_thumbnail_size(790, 300, true);                                                                   // 'post-thumbnail'のサイズを指定する
     add_image_size('large-thumbnail', 1090, 330, true);                                                        // アイキャッチ画像のサイズに'large-thumbnail'を適用する
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));    // 出力されるマークアップをHTMLに設定
     add_editor_style( array( 'css/editor-style.css' ) );                                                       // 管理画面の投稿画面に適用するcssをここで指定する
 }
+add_action('after_setup_theme', 'custom_theme_setup');
 
 /**
  * cssとjsの読み込み
