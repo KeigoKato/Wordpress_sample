@@ -39,27 +39,50 @@
                 <div class="row py-5 blog-list">
                     <span class="mx-auto py-3"><h3>ブログ</h3></span>
                     <div class="card-deck">
-                        <?php for ($i=0; $i<6; $i++): ?>
-                        <div class="col-sm-6 pb-5">
+
+
+                        <?php
+                        $args = array(
+                            'category_name' => 'blog',
+                            'posts_per_page' => 4,
+                            'ignore_sticky_posts' => 1
+                        );
+                        $blog_posts = new WP_Query($args);
+                        $first_post = true;
+                        ?>
+                        <?php if ($blog_posts->have_posts()): ?>
+                        <?php while ($blog_posts->have_posts()): $blog_posts->the_post(); ?>
+                        <div <?php post_class( 'entry entry--simple entry--excerpt col-sm-6 pb-5') ?>>
                             <div class="card border-0">
-                                <img class="card-img-top rounded-0 img-thumbnail border" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-3.png" alt="menu-3">
-                                <div class="card-body">
-                                    <p class="card-text mb-2"><small class="text-muted">2018 / 12 / 12</small></p>
-                                    <a href="#">
-                                        <h4 class="card-title font-weight-bold">パニーニとエスプレッソ</h4>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php if (has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail('post-thumbnail', array('class' => 'card-img-top rounded-0 img-thumbnail border', 'alt' => the_title_attribute('echo=0'), 'title' => the_title_attribute('echo=0'))); ?>
+                                    <?php else: ?>
+                                    <img class="card-img-top rounded-0 img-thumbnail border" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-3.png" alt="menu-3">
+                                    <?php endif; ?>
+                                </a>
+                                <div class="card-body p-3">
+                                    <p class="card-text mb-2"><small class="text-muted"><time datetime="<?php the_time('Y-m-d') ?>"><?php echo the_time('Y / n / j (D)') ?></time></small></p>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h4 class="card-title font-weight-bold"><?php the_title(); ?></h4>
                                     </a>
-                                    <p class="card-text small">
-                                        こんにちわ、MAVERICK CAFEです！今回は新たにイタリアンハムとレタスのパニーニをご紹介します！　パニーニセット　800yen　イタリアンハムとしゃきしゃきのレタスがアクセントになって美味しいくお召し上がり頂けます。ぜひ一度…
-                                    </p>
+                                    <div class="card-text small">
+                                        <?php the_excerpt(); ?>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-lg btn-block border-dark rounded">Block level button</button>
+                                <a href="<?php the_permalink(); ?>"><button type="button" class="btn btn-lg btn-block border-dark rounded">続きを読む</button></a>
                             </div>
                         </div>
-                        <?php endfor; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php wp_reset_postdata(); ?>
+
                     </div>
                 </div>
 
             </div>
+
+
 
             <div class="news-access-wrapper">
                 <div class="container">
@@ -68,28 +91,36 @@
                             <h3 class="text-center">ニュース</h3>
                             <table class="table table-striped">
                                 <tbody>
-                                    <?php for ($i=0; $i<5; $i++): ?>
+
+                                    <?php
+                                    $args = array(
+                                        'category_name' => 'news',
+                                        'posts_per_page' => 5,
+                                        'ignore_sticky_posts' => 1
+                                    );
+                                    $news_posts = new WP_Query($args);
+                                    ?>
+                                    <?php if ($news_posts->have_posts()): ?>
+                                    <?php while ($news_posts->have_posts()): $news_posts->the_post(); ?>
                                     <tr>
                                         <td class="column-1">
-                                            <time datetime="2018/12/12">2018/12/12</time>
+                                            <time datetime="<?php the_time('Y-m-d'); ?>"><small><?php the_time('Y / n / j (D)'); ?></small></time>
                                             <div class="tag-list">
-                                                <h6 class="badge badge-warning">
-                                                    <a href="#"><small>メニュー</small></a>
-                                                </h6>
-                                                <h6 class="badge badge-warning">
-                                                    <a href="#"><small>新商品</small></a>
-                                                </h6>
+                                                <?php the_tags('<h6 class="badge badge-warning mr-1 mb-0"><small>', '</small></h6><h6 class="badge badge-warning mr-1 mb-0"><small>', '</small></h6>');?>
                                             </div>
                                         </td>
                                         <td class="column-2">
-                                            <a href="#">
+                                            <a href="<?php the_permalink(); ?>">
                                                 <small class="text-left">
-                                                    ８月の新メニューが登場しました！ランチタイムには季節の野菜をふんだんに揃えたＡセットが…
+                                                    <?php the_title(); ?> - <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
                                                 </small>
                                             </a>
                                         </td>
                                     </tr>
-                                    <?php endfor; ?>
+                                    <?php endwhile; ?>
+                                    <?php endif; ?>
+                                    <?php wp_reset_postdata(); ?>
+
                                 </tbody>
                             </table>
                         </div>

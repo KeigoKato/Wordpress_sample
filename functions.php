@@ -45,3 +45,12 @@ function css_js_scripts_reader() {
 }
 add_action('wp_enqueue_scripts', 'css_js_scripts_reader');
 
+/**
+ * the_excerpt()メソッドで抜粋した文の末尾の文字を変更する
+ *
+ * @return string
+ */
+function wp_excerpt_more() {
+    return ' ...';
+}
+add_filter('excerpt_more', 'wp_excerpt_more');

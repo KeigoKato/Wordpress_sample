@@ -177,3 +177,7 @@ footer {
     background-image: url("../img/sprite.png");
     background-position: 0px -115px;
 }
+
+.prev-next a {
+    color: white !important;
+}
