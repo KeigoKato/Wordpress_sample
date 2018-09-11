@@ -54,3 +54,21 @@ function wp_excerpt_more() {
     return ' ...';
 }
 add_filter('excerpt_more', 'wp_excerpt_more');
+
+/**
+ * サイドバーウィジェットを定義する
+ *
+ * @return void
+ */
+function custom_widgets_init() {
+    register_sidebar(array(
+        'name'          => 'サイドバーウィジェットエリア',
+        'id'            => 'sidebar-widget-area',
+        'description'   => 'サイドバーのウィジェットエリア',
+        'before_widget' => '<div class="card mb-3 rounded-0">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<div class="card-header rounded-0" style="width: 100%">',
+        'after_title'   => '</div>',
+    ));
+}
+add_action('widgets_init', 'custom_widgets_init');

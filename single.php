@@ -104,31 +104,9 @@
 
             </div>
             <div class="col-sm-3 right-sidebar">
-                <div class="card mb-5 rounded-0">
-                    <div class="card-header rounded-0" style="width: 100%">
-                        最新の投稿
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item rounded-0">cras justo odio</li>
-                        <li class="list-group-item rounded-0">dapibus ac facilisis in</li>
-                        <li class="list-group-item rounded-0">vestibulum at eros</li>
-                        <li class="list-group-item rounded-0">dapibus ac facilisis in</li>
-                        <li class="list-group-item rounded-0">vestibulum at eros</li>
-                    </ul>
-                </div>
-                <div class="card mb-5 rounded-0">
-                    <div class="card-header rounded-0" style="width: 100%">
-                        最新の投稿
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item rounded-0">cras justo odio</li>
-                        <li class="list-group-item rounded-0">dapibus ac facilisis in</li>
-                        <li class="list-group-item rounded-0">vestibulum at eros</li>
-                        <li class="list-group-item rounded-0">dapibus ac facilisis in</li>
-                        <li class="list-group-item rounded-0">vestibulum at eros</li>
-                    </ul>
-                </div>
+            <?php get_sidebar(); ?>
             </div>
+
         </div>
     </div>
 </div>
