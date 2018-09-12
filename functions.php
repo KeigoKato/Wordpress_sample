@@ -17,8 +17,10 @@ function custom_theme_setup() {
     add_image_size('large-thumbnail', 1090, 330, true);                                                        // アイキャッチ画像のサイズに'large-thumbnail'を適用する
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));    // 出力されるマークアップをHTMLに設定
     add_editor_style( array( 'css/editor-style.css' ) );                                                       // 管理画面の投稿画面に適用するcssをここで指定する
-    add_theme_support('menus');                                                                                // カスタムメニューを有効化
-    register_nav_menus(array('ヘッダーナビゲーション', 'フッターナビゲーション'));                             // テーマの位置を定義
+    register_nav_menus(array(                                                                                  // カスタムメニューを追加
+        'header_nav' => 'ヘッダーナビゲーション',
+        'footer_nav' => 'フッターナビゲーション',
+    ));
 }
 add_action('after_setup_theme', 'custom_theme_setup');
 

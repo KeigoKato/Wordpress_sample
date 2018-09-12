@@ -16,6 +16,17 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+                        <?php
+                        if (has_nav_menu('header_nav')) {
+                            wp_nav_menu(array(
+                                'theme_location' => 'header_nav',
+                                'container_class' => 'collapse navbar-collapse',
+                                'container_id' => 'navbarNavDropdown',
+                                'menu_class' => 'navbar-nav mx-auto',
+                                'link_before' => '<span class="fas fa-home fa-2x"></span>',
+                            ));
+                        }
+                        ?>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item text-center">
