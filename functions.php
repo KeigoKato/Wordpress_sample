@@ -30,14 +30,6 @@ add_action('after_setup_theme', 'custom_theme_setup');
  * @return void
  */
 function css_js_scripts_reader() {
-    // bootstrapのcssを読み込み
-    // サイト用のcssの読み込み
-    // wordpressテーマを定義するためだけのcssの読み込み
-    // fontawesomeのcssの読み込み
-    // デフォルトで読み込まれるjQueryをリセットする
-    // jQueryの読み込み
-    // bootstrapのjsを読み込み
-    // サイト用のjsの読み込み
     wp_enqueue_style('bootstrap-css', get_template_directory_uri().'/css/bootstrap.css', array(), '4.1.3');                // bootstrapのcssを読み込み
     wp_enqueue_style('sampleCafe-style', get_stylesheet_uri(), array(), '1');                                              // wordpressテーマを定義するためだけのcssの読み込み
     wp_enqueue_style('fontawesome-style', get_template_directory_uri().'/css/all.css', array(), '5.3.1');                  // fontawesomeのcssの読み込み

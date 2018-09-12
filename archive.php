@@ -32,23 +32,12 @@
                 </div>
                 <div class="separator mb-5"></div>
                 <?php endwhile; ?>
+                <?php
+                if (function_exists('page_navi')):
+                    page_navi('elm_class=page-nav&edge_type=span');
+                endif;
+                ?>
                 <?php endif; ?>
-
-
-                <div class="prev-next">
-                    <ul class="list-inline pb-5">
-                        <li class="float-left">
-                            <span class="prev-btn nav-link">
-                                <?php previous_post_link('%link', 'PREV') ?>
-                            </span>
-                        </li>
-                        <li class="float-right">
-                            <span class="next-btn nav-link">
-                                <?php previous_post_link('%link', 'NEXT') ?>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
 
             </div>
             <div class="col-sm-3 right-sidebar">

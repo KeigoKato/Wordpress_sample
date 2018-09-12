@@ -77,3 +77,10 @@
                 </div>
             </div>
         </div>
+        <?php
+        if (function_exists('bread_crumb')) {
+            if (!is_front_page()) {
+                bread_crumb('bnvi_element=nav&elm_id=bread-crumb');
+            }
+        }
+        ?>
