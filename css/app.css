@@ -176,9 +176,9 @@ footer {
 
 
 
-/* _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
-/* サイドバーとウィジェットのulとliにCSSを特別に適用 */
-/* _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
+/* /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    サイドバーとウィジェットのulとliにCSSを特別に適用
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/ */
 .right-sidebar .card-header {
     color: white;
     background-image: url("../img/bg-home-utilities__news.jpg");
@@ -218,4 +218,31 @@ footer {
     border-radius: 0 !important;
     /* その他 */
     font-size: 12px;
+}
+.widget_calendar caption {
+    text-align: center;
+  }
+.widget_calendar table {
+    width: 100%;
+}
+.widget_calendar table thead th, .widget_calendar table thead td {
+    text-align: center;
+}
+.widget_calendar table tbody th, .widget_calendar table tbody td {
+    text-align: center;
+}
+
+.right-sidebar .search-form {
+    background-color: white;
+}
+.right-sidebar .search-form span {
+    display: none;
+}
+.right-sidebar .search-form label {
+    margin-bottom: 0px;
+    padding: 10px;
+    width: 70%;
+}
+.right-sidebar .search-form label input{
+    width: 100%;
 }
