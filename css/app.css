@@ -69,9 +69,9 @@ header .header-menu {
     background: url('../img/bg-home-postlist.png');
 }
 
-.menu-title {
+/* .menu-title {
     background-image: url('../img/bg-section-title.png');
-}
+} */
 
 .card {
     background: none;
@@ -245,4 +245,112 @@ footer {
 }
 .right-sidebar .search-form label input{
     width: 100%;
+}
+
+
+/*
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    bread_crumb
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+*/
+#bread-crumb ul {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 0;
+    padding: 10px 0;
+    list-style: none;
+}
+#bread-crumb ul li {
+    display: inline-block;
+}
+#bread-crumb ul li a {
+    margin-right: 0.5rem;
+}
+#bread-crumb ul li:not(:last-child):after {
+    content: " > ";
+    margin-right: 0.5rem;
+}
+
+
+/*
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    pageination
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+*/
+#page-nav {
+    margin-bottom: 48px;
+}
+#page-nav ul {
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+#page-nav ul li {
+    margin: 0 2px;
+    display: inline-block;
+}
+#page-nav ul li a {
+    padding: 15px 15px;
+    background-color: #eee;
+}
+#page-nav ul .current span {
+    padding: 15px 15px;
+    background-color: #cab471;
+}
+#page-nav ul .first span {
+    display: none;
+}
+#page-nav ul .previous span {
+    display: none;
+}
+#page-nav ul .last span {
+    display: none;
+}
+#page-nav ul .next span {
+    display: none;
+}
+
+
+/*
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    list of taxonomy
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+*/
+.taxonomy-list {
+    padding: 0;
+}
+.taxonomy-list li {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #9ea3a8;
+}
+.taxonomy-list li:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+/*
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    list of staff
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+*/
+.staff-list img {
+    height: 140px;
+    width: 140px;
+    position: relative;
+    bottom: -40px;
+    z-index: 100;
+    object-fit: cover;
+}
+.staff-list-item {
+    position: relative;
+    bottom: 20px;
+}
+.staff-list .staff-list-item .staff-detail {
+    border: 2px solid #9ea3a8;
+    border-radius: 0;
+}
+.staff-list .staff-list-item .staff-detail p {
+    margin: 1px;
 }

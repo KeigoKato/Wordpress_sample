@@ -15,6 +15,9 @@ function custom_theme_setup() {
     add_theme_support('post-thumbnails');                                                                      // アイキャッチ画像のサイズ'post-thumbnail'という名前で適用する
     set_post_thumbnail_size(790, 300, true);                                                                   // 'post-thumbnail'のサイズを指定する
     add_image_size('large-thumbnail', 1090, 330, true);                                                        // アイキャッチ画像のサイズに'large-thumbnail'を適用する
+    add_image_size('small-thumbnail', 200, 200, true);                                                         // アイキャッチ画像のサイズに'small-thumbnail'を適用する
+    add_image_size('middle-thumbnail', 300, 300, true);                                                        // アイキャッチ画像のサイズに'middle-thumbnail'を適用する
+    add_image_size('staffs-thumbnail', 140, 140, true);                                                        // アイキャッチ画像のサイズに'staffs-thumbnail'を適用する
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));    // 出力されるマークアップをHTMLに設定
     add_editor_style( array( 'css/editor-style.css' ) );                                                       // 管理画面の投稿画面に適用するcssをここで指定する
     register_nav_menus(array(                                                                                  // カスタムメニューを追加
@@ -68,3 +71,72 @@ function custom_widgets_init() {
     ));
 }
 add_action('widgets_init', 'custom_widgets_init');
+
+/**
+ * カスタム投稿タイプとカスタムフィールドを追加する
+ *
+ * @return void
+ */
+function custom_register_post_type() {
+    $args_menus = array(
+        'label'        => 'メニュー 一覧',                                           // カスタム投稿タイプのラベルを指定する
+        'hierarchical' => false,
+        'public'       => true,
+        'has_archive'  => true,                                                      // アーカイブページを持たせる
+        'supports'     => array('title', 'editor', 'thumbnail', 'custom-fields'),    // タイトルと本文欄とアイキャッチ画像とカスタムフィールドを有効にする
+        'rewrite'      => array('with_front' => false),                              // http://localhost:8888/wordpress/menusというパーマリンクに設定
+    );
+    register_post_type('menus', $args_menus);                                        // 'menus'というスラッグ名でカスタム投稿タイプを登録する
+
+    $args_staffs = array(
+        'label'        => 'スタッフ 一覧',                                           // カスタム投稿タイプのラベルを指定する
+        'hierarchical' => false,
+        'public'       => true,
+        'has_archive'  => true,                                                      // アーカイブページを持たせる
+        'supports'     => array('title', 'editor', 'thumbnail', 'custom-fields'),    // タイトルと本文欄とアイキャッチ画像とカスタムフィールドを有効にする
+        'rewrite'      => array('with_front' => false),                              // http://localhost:8888/wordpress/menusというパーマリンクに設定
+    );
+    register_post_type('staffs', $args_staffs);                                      // 'menus'というスラッグ名でカスタム投稿タイプを登録する
+}
+add_action('init', 'custom_register_post_type');
+
+/**
+ * menus投稿タイプにmenucatというスラッグ名でタクソノミーを登録する
+ *
+ * @return void
+ */
+function custom_register_taxonomy() {
+    $args_menus = array(
+        'hierarchical' => true,                            // 階層の親子関係を利用する
+        'label'        => 'メニューカテゴリー',            // ラベルを指定する
+        'rewrite'      => array('with_front' => false),    // パーマリンクの形式を指定する
+    );
+    register_taxonomy('menucat', 'menus', $args_menus);    // menus投稿タイプにmenucatというスラッグ名でタクソノミーを登録する
+
+    $args_staffs = array(
+        'hierarchical' => true,                               // 階層の親子関係を利用する
+        'label'        => 'スタッフカテゴリー',               // ラベルを指定する
+        'rewrite'      => array('with_front' => false),       // パーマリンクの形式を指定する
+    );
+    register_taxonomy('staffcat', 'staffs', $args_staffs);    //staffs投稿タイプにstaffcatというスラッグ名でタクソノミーを登録する
+}
+add_action('init', 'custom_register_taxonomy');
+
+
+
+// WordPress タームの親・子・孫の一覧に孫タームの投稿一覧を表示する方法
+// function get_parent_child_terms($taxonomy_slug, $post_type_slug) {
+//     $taxonomy_slug = 'staffcat';                                 // タクソノミーのスラッグを指定する
+//     $post_type_slug = 'staffs';                                  // ポストタイプを指定する
+//     $parents = get_terms($taxonomy_slug,'parent=0');             // 親のタームを取り出す
+
+//     foreach ( $parents as $parent ) { // 親タームのループを開始
+//         $parent_name = $parent->name; // 親タームのタイトルを表示
+//         $children = get_terms($taxonomy_slug,'hierarchical=0&parent='.$parent->term_id);
+
+//         foreach ( $children  as $child) { // 子タームのループを開始
+//             $child_name = $child->name; // 孫タームのタイトルを表示
+//         } // 子ターム終了
+
+//     } // 親ターム終了
+// }

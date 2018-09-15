@@ -32,13 +32,16 @@
                 </div>
                 <div class="separator mb-5"></div>
                 <?php endwhile; ?>
-                <?php
-                if (function_exists('page_navi')):
-                    page_navi('elm_class=page-nav&edge_type=span');
-                endif;
-                ?>
-                <?php endif; ?>
-
+                <div class="container-fluid">
+                    <div id="page-nav">
+                    <?php
+                    if (function_exists('page_navi')):
+                        page_navi('elm_class=page-nav-list&edge_type=span');
+                    endif;
+                    ?>
+                    <?php endif; ?>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-3 right-sidebar">
             <?php get_sidebar(); ?>

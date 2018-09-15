@@ -33,19 +33,19 @@
                                     <a class="nav-link py-4" href="<?php echo esc_url(home_url('/')); ?>"><span class="fas fa-home fa-2x"></span>HOME</a>
                                 </li>
                                 <li class="nav-item text-center">
-                                    <a class="nav-link py-4" href="#"><span class="fas fa-exclamation-circle fa-2x"></span>NEWS</a>
+                                    <a class="nav-link py-4" href="<?php echo esc_url(home_url('/category/news/')); ?>"><span class="fas fa-exclamation-circle fa-2x"></span>NEWS</a>
                                 </li>
                                 <li class="nav-item text-center">
-                                    <a class="nav-link py-4" href="#"><span class="fas fa-list fa-2x"></span>MENU</a>
+                                    <a class="nav-link py-4" href="<?php echo esc_url(home_url('/menus/')); ?>"><span class="fas fa-list fa-2x"></span>MENU</a>
                                 </li>
                                 <li class="nav-item text-center">
                                     <a class="nav-link py-4" href="#"><span class="fas fa-map-marked-alt fa-2x"></span>ACCESS</a>
                                 </li>
                                 <li class="nav-item text-center">
-                                    <a class="nav-link py-4" href="#"><span class="fas fa-image fa-2x"></span>GALLERY</a>
+                                    <a class="nav-link py-4" href="<?php echo esc_url(home_url('/staffs/')); ?>"><span class="fas fa-image fa-2x"></span>STAFF</a>
                                 </li>
                                 <li class="nav-item text-center">
-                                    <a class="nav-link py-4" href="#"><span class="fas fa-tag fa-2x"></span>BLOG</a>
+                                    <a class="nav-link py-4" href="<?php echo esc_url(home_url('/category/blog/')); ?>"><span class="fas fa-tag fa-2x"></span>BLOG</a>
                                 </li>
                             </ul>
                         </div>
@@ -77,10 +77,16 @@
                 </div>
             </div>
         </div>
-        <?php
-        if (function_exists('bread_crumb')) {
-            if (!is_front_page()) {
-                bread_crumb('bnvi_element=nav&elm_id=bread-crumb');
-            }
-        }
-        ?>
+        <div class="container" id="bread-crumb">
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php
+                    if (function_exists('bread_crumb')) {
+                        if (!is_front_page()) {
+                            bread_crumb('bnvi_element=nav&elm_id=bread-crumb-list');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
