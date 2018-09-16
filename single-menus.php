@@ -53,6 +53,9 @@
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
+                <div class="col-sm-12">
+                    <?php get_template_part('sns'); ?>
+                </div>
             </div>
 
             <div class="col-sm-3 right-sidebar">

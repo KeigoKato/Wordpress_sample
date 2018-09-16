@@ -40,6 +40,9 @@
                             </small>
                         </div>
                     </div>
+                    <div class="col-sm-12">
+                        <?php get_template_part('sns'); ?>
+                    </div>
                     <div class="separator mb-5"></div>
                 </article>
 

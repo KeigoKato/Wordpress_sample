@@ -10,7 +10,7 @@
                                 <img class="card-img-top rounded-circle img-thumbnail border" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-3.png" alt="menu-3">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Tea</h5>
-                                    <p class="card-text">シェフの焼く絶品のパンと、バリスタの入れるコーヒーでリフレッシュする贅沢をお楽しみください。</p>
+                                    <p class="card-text">□□□□□□□□□□●□□▲□□□×□□●□□▲□||□□□▲□□口□□</p>
                                 </div>
                             </div>
                         </div>
@@ -19,7 +19,7 @@
                                 <img class="card-img-top rounded-circle img-thumbnail border" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-1.png" alt="menu-2">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Desert</h5>
-                                    <p class="card-text">おいしい野菜を使った、元気になれるメニューがいっぱい！平日のランチはもちろん、お休みの日にも美味しいランチタイムをお楽しみください。</p>
+                                    <p class="card-text">□□□□□□□×□□●□□▲□||□□□□●□□▲□□□×□□●□□▲□||□□□▲□□口□□□||□□□▲□□口</p>
                                 </div>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                                 <img class="card-img-top rounded-circle img-thumbnail border" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/img-home-menu-4.png" alt="menu-4">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Lunch</h5>
-                                    <p class="card-text">すべて直送で新鮮な食材で、四季折々の旬の味をお楽しみいただけます。本格的なお料理をゆっくりとご堪能ください。</p>
+                                    <p class="card-text">□□□□×□□●□□□□□□□□□□●□□▲□□□×□□●□□▲□||□□□□●□□▲□□□▲□□口□□</p>
                                 </div>
                             </div>
                         </div>
